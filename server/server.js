@@ -45,8 +45,8 @@ app.get('/', (req, res) => {
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/advanced-storage')
   .then(() => {
     console.log('Connected to MongoDB');
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+    app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
     });
   })
   .catch(err => {
